@@ -30,6 +30,11 @@
   .expense-item__price {
     font-size: 1rem;
     font-weight: bold;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
     background-color: #40005d;
     border: 1px solid white;
