@@ -1,18 +1,48 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 function ExpenseForm(){
-    const [enteredTitle, setEnteredTitle] = useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
-    
+
+    // método 1
+
+    // const [enteredTitle, setEnteredTitle] = useState('');
+    // const [enteredAmount, setEnteredAmount] = useState('');
+    // const [enteredDate, setEnteredDate] = useState('');
+    // function titleChangeHandler(event){
+    //     setEnteredTitle(event.target.value);
+    // }
+    // function amountChangeHandler(event){
+    //     setEnteredAmount(event.target.value);
+    // }
+    // function dateChangeHandler(event){
+    //     setEnteredDate(event.target.value);
+    // }
+
+    // método 2
+    const[userInput, setUserInput] = useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: '',
+    })
+
     function titleChangeHandler(event){
-        setEnteredTitle(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredTitle: event.target.value,
+        })
     }
+
     function amountChangeHandler(event){
-        setEnteredAmount(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredAmount: event.target.value,
+        })
     }
+
     function dateChangeHandler(event){
-        setEnteredDate(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredDate: event.target.value,
+        })
     }
     return(
         <form>
